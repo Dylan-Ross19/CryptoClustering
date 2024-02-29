@@ -56,35 +56,26 @@
 
 ## 6. Cluster Cryptocurrencies with K-Means Using the PCA Data: 
 
--Initialize the K-means model with the best value for k.
- - [x]
--Fit the model using the PCA data.
- - [x]
--Predict the clusters and add a new column to the DataFrame with the predicted clusters.
+- Model Fit Predict
  - [x]
 -Create a scatter plot using pandas' plot.
- - [x]
+ - [x] `The hvplot.scatter()` function generated a scatter plot.
+`x='PCA1' and y='PCA2'` specified the columns to be plotted on the x and y axes, respectively.
+`by='Cluster'` colored the data points based on the values in the `'Cluster'` column.
+`hover_cols=['coin_id']` adds additional information (coin_id) to the hover tooltip when hovering over data points.
+
+ ###  Create Scatter Plot displaying All 3 PCAs
+ - `fig = plt.figure()` created a new figure object.
+`ax = fig.add_subplot(projection='3d')` added a 3D subplot to the figure.
+`ax.scatter3D()` generated a 3D scatter plot.
+`pca_data_copy['PCA1']`, `pca_data_copy['PCA2']`, and `pca_data_copy['PCA3']` specified the values for the x, y, and z axes, respectively.
+`c=pca_data_copy['Cluster']` colored the data points based on the values in the 'Cluster' column.
+cmap='rainbow' specified the color map to be used for coloring the data points.
+`plt.colorbar(plot_3D, label='Cluster', pad=0.2)` added a colorbar to the plot, indicating the mapping of cluster values to colors.
 
 ## 7. Determine the Weights of Each Feature on Each Principal Component:
 
 -Create a DataFrame showing the weights of each feature for each principal component.
- - [x]
+ - [x] `pca_data_copy.set_index(df.index, inplace=True)` matched the index of the original DataFrame, the rows of `pca_data_copy` will now correspond to the same rows as the original DataFrame, ensuring alignment of data on future analyses.
 -Analyze which features have the strongest positive or negative influence on each component.
- - [x]
-
-## 8. Coding Conventions and Formatting:
-
--Ensure proper placement of imports, naming conventions, DRY principles, concise logic, and creative engineering.
- - [x]
-
-## 9. Deployment and Submission:
-
--Create a GitHub repository containing the project files.
- - [x]
--Add files to the repository using the command line with appropriate commit messages.
- - [x]
-
-## 10. Code Comments:
-
--Add concise and relevant comments throughout the code to aid understanding for other developers.
  - [x]
